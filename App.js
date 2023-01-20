@@ -1,9 +1,11 @@
+ import React from "react";
+ import ReactDOM from "react-dom/client";
 const heading = React.createElement(
     "h1",
     {
         id:"title",
     },
-    "Heading 1"
+    "Heading 1 for parcel"
 );
 
 const heading2 = React.createElement(
@@ -21,7 +23,7 @@ const heading2 = React.createElement(
     },
     [heading, heading2]
  );
-console.log(heading);
+// console.log(heading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(container);
