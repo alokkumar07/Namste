@@ -10,14 +10,8 @@ const RestrauntMenu = () => {
     getRestaurantInfo();
   }, []);
 
-  async function getRestaurantInfo() {
-    // const data = await fetch(
-    //   "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9801436&lng=77.5685724&menuId=288893"
-    // );
-    
-    const data = await fetch(`https://www.swiggy.com/dapi/menu/v4/full?lat=26.9161991&lng=80.9442732&menuId=${resId}`);
-
-   
+  async function getRestaurantInfo() {    
+    const data = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=26.9161991&lng=80.9442732&menuId="+resId);
     const json = await data.json();
     console.log(json);
     setRestaurant(json.data);

@@ -14,7 +14,7 @@ function filterData(searchText,restaurant){
 const Body = () => {
     const [allRestaurants,setAllRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-    const [searchText, setSearchText] = useState();
+    const [searchText, setSearchText] = useState(); 
 
 useEffect(()=>{
     //Api calls
@@ -65,7 +65,7 @@ if(!allRestaurants) return null;
       <div className="restaurant-list">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link to={"/restaurants/" + restaurant.data.id}
+            <Link to={"/restaurant/" + restaurant.data.id}
             key={restaurant.data.id}
             >
             <RestrauntCard {...restaurant.data}  />
