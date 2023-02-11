@@ -6,14 +6,15 @@ import UserContext from "../utils/userContext";
 import { useSelector } from "react-redux";
 const Title = () => (
   <a href="/">
-    <img className="h-28 p-2" alt="logo" src={LOGO} />
+    <img className="h-28 p-2  rounded-full" alt="logo" src={LOGO} />
   </a>
 );
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const isOnline = useOnline();
+  const isOnline = useOnline(); //custom hook
+
 
   const {user} = useContext(UserContext)
 
@@ -23,29 +24,29 @@ const Header = () => {
 
 
   return (
-    <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50">
+    <div className=" sm:flex  justify-between items-center text-center border shadow-lg ">
       <Title />
-      <div className="nav-items">
-        <ul className="flex py-10">
-          <li className="px-2">
+      <div className=" flex justify-center">
+        <ul className="flex py-10 font-bold">
+          <li className="px-2  hover:text-orange-600">
             <Link to="/"> Home </Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 hover:text-orange-600">
             <Link to="/about"> About </Link>
           </li>
-          <li className="px-2">
+          <li className="px-2  hover:text-orange-600">
             <Link to="/contact"> Contact </Link>
           </li>
-          <li className="px-2">
+          <li className="px-2  hover:text-orange-600">
             <Link to="/instamart"> Instamart </Link>
           </li>
           <Link to="/cart">
-          <li className="px-2">Cart - {cartItems.length} items</li>
+          <li className="px-2  hover:text-orange-600">Cart - {cartItems.length} items</li>
           </Link>
         </ul>
       </div>
-      <h1>{isOnline ? "✅" : "🔴"}</h1>
-     <span className="p-10 font-bold text-red-900">{user.name}</span>   
+      <h1>{isOnline ? "✅Online" : "🔴Offline"}</h1>
+     <span className="p-10 font-bold  hover:text-orange-600">{user.name}</span>   
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
