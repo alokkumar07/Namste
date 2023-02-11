@@ -22,7 +22,8 @@ class About extends Component {
           {({user})=><h4 className="font-bold text-xl p-10">{user.name} - {user.email}</h4>}
         </UserContext.Consumer>
         <p>
-          This is the Namaste React Live Course Chapter 07 - Finding the Path 🚀
+         I'm Frontend Developer
+
         </p>
         <Profile />
       </div>

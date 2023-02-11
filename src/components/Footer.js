@@ -3,6 +3,10 @@ import UserContext from "../utils/userContext";
 const Footer = () => {
    const {user }= useContext(UserContext);
 
-    return <h4 className='p-10 m-10 text-center text-xl font-bold text-blue-800'>developed by {user.name} - {user.email}</h4>;
+    return (
+    <div>
+    <h4 className='p-20 text-center font-bold text-xl flex justify-center bg-pink-50 shadow-lg sm:bg-blue-50'>Design And Developed By: {user.name} - {user.email} - All Right Reserved by &copy; Alok kumar</h4>;
+    </div>
+);
   };
 export default Footer;
